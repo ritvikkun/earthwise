@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Make sure the page background is always white */
+html, body, #__next, :root {
+  min-height: 100%;
+  background: #ffffff !important;
+}
+
+/* Prevent any generic section from painting a background color by default */
+section {
+  background-color: transparent !important;
+}
+
+/* Optional: if you used dark mode classes anywhere and forgot to remove them */
+:root {
+  color-scheme: light;
+}
